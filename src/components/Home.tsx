@@ -35,7 +35,7 @@ export default function Home() {
 
       <section className="sec side" id="games">
         <div className="w">
-          <Heading title="Our games." sub="worlds in progress" />
+          <Heading title="Our games." sub="Wait for more!" />
           <div className="rv">
             {games.filter((game) => game.featured).slice(0, 3).map((game, i) => (
               <div className="row" key={game.slug}>
@@ -88,10 +88,10 @@ export default function Home() {
             <div><span className="mo">Navigate</span><NavLink to="home">Home</NavLink><NavLink to="games">Games</NavLink><NavLink to="home" section="about">About</NavLink><NavLink to="home" section="updates">Updates</NavLink></div>
             <div>
               <span className="mo">Find us</span>
-              <a className="social-link" href="https://www.instagram.com/rethorizon.studio/" target="_blank" rel="noopener noreferrer"><img src={instagramIcon} alt="" />Instagram · rethorizon.studio</a>
-              <a className="social-link" href="https://x.com/RETHorizon" target="_blank" rel="noopener noreferrer"><img src={xIcon} alt="" />X · @RETHorizon</a>
-              <a className="social-link" href="https://www.youtube.com/@RETHorizonStudioOfficial" target="_blank" rel="noopener noreferrer"><img src={youtubeIcon} alt="" />YouTube · @RETHorizonStudioOfficial</a>
-              <a className="social-link" href="https://rethorizon-studio.itch.io/" target="_blank" rel="noopener noreferrer"><img src={websiteIcon} alt="" />itch.io · RETHorizon Studio</a>
+              <a className="social-link" href="https://www.instagram.com/rethorizon.studio/" target="_blank" rel="noopener noreferrer"><img src={instagramIcon} alt="" />rethorizon.studio</a>
+              <a className="social-link" href="https://x.com/RETHorizon" target="_blank" rel="noopener noreferrer"><img src={xIcon} alt="" />@RETHorizon</a>
+              <a className="social-link" href="https://www.youtube.com/@RETHorizonStudioOfficial" target="_blank" rel="noopener noreferrer"><img src={youtubeIcon} alt="" />@RETHorizonStudioOfficial</a>
+              <a className="social-link" href="https://rethorizon-studio.itch.io/" target="_blank" rel="noopener noreferrer"><img src={websiteIcon} alt="" />RETHorizon Studio (itch.io)</a>
               <a className="social-link" href={`mailto:${brand.contactEmail}`}><img src={emailIcon} alt="" />{brand.contactEmail}</a>
             </div>
             <div><span className="mo">Studio</span><span>Independent game company</span><span>Original experiences</span></div>

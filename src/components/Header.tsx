@@ -1,6 +1,7 @@
 import { NavLink } from '../router'
 import brand from '../data/brand.json'
-import logo from '../../img/logo/RETHorizon Studio Logo White.png'
+import whiteLogo from '../../img/logo/RETHorizon Studio Logo White.png'
+import blackLogo from '../../img/logo/RETHorizon Studio Logo Black.png'
 
 interface Props {
   open: boolean
@@ -13,7 +14,8 @@ export default function Header({ open, onToggle, onClose }: Props) {
     <>
       <header>
         <NavLink to="home" className="lg" aria-label={`${brand.name} home`}>
-          <img src={logo} alt={brand.name} />
+          <img className="lg-logo" src={whiteLogo} alt={brand.name} />
+          <img className="lg-notes" src={blackLogo} alt="" aria-hidden="true" />
         </NavLink>
         <button className="bg" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mn" onClick={onToggle}>
           <i />

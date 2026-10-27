@@ -244,7 +244,7 @@ const MUT_ON: V3 = [194, 208, 228], MUT_OFF: V3 = [67, 91, 124]
 const LN_ON: V3 = [30, 44, 66], LN_OFF: V3 = [161, 183, 213]
 const PAGE_DARK: V3 = [7, 16, 32], PAGE_LIGHT: V3 = [204, 220, 243]
 const mix = (a: V3, b: V3, t: number) => `rgb(${Math.round(lerp(a[0], b[0], t))},${Math.round(lerp(a[1], b[1], t))},${Math.round(lerp(a[2], b[2], t))})`
-const CSS_VARS = ['--cov', '--top', '--page', '--ink', '--ink-mut', '--ink-ln', '--hdr', '--cl-ink', '--cl-dim', '--cl-inv', '--halo']
+const CSS_VARS = ['--cov', '--top', '--page', '--ink', '--ink-mut', '--ink-ln', '--hdr', '--cl-ink', '--cl-dim', '--cl-inv', '--halo', '--updates-k']
 const BRIGHT = [1, 0.85, 0.85, 1] // cube and E at full strength
 const HUES = [0, 0.15, 0.55, 0.3, 0.1] // nebula tint per section
 const QUIET = '.hero h1, .sub, .hd2 h2, .hd2 p, .row, .ab > div, .cta, .close h2, .close .btn'
@@ -320,6 +320,7 @@ export function createScene(canvas: HTMLCanvasElement, nebulaCanvas: HTMLCanvasE
     set('--cov', cov.toFixed(3)); set('--top', topK.toFixed(3))
     set('--page', mix(PAGE_DARK, PAGE_LIGHT, cov)) // keeps the scrollbar gutter in step with the cloud
     set('--ink', mix(INK_ON, INK_OFF, updatesK)); set('--ink-mut', mix(MUT_ON, MUT_OFF, updatesK)); set('--ink-ln', mix(LN_ON, LN_OFF, updatesK))
+    set('--updates-k', updatesK.toFixed(3))
     set('--hdr', mix(INK_ON, INK_OFF, topK)) // header sits at the top: covered last, uncovered last
     set('--cl-ink', mix(INK_ON, INK_OFF, clK)); set('--cl-dim', mix([74, 74, 80], [140, 140, 150], clK)); set('--cl-inv', mix([10, 10, 11], [242, 241, 238], clK))
     set('--halo', `rgba(5,12,25,${(0.88 * clamp(1 - cov * 2.2, 0, 1)).toFixed(2)})`)
